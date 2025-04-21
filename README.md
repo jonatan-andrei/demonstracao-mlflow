@@ -24,13 +24,19 @@ pip install evidently==0.6.7
 git clone https://github.com/jonatan-andrei/demonstracao-mlflow
 ```
 
-## Passo 2 - Iniciar o MLFlow:
+### Passo 2 - Baixar o dataset:
+```
+https://www.kaggle.com/datasets/joebeachcapital/loan-default/data 
+```
+O arquivo Anonymize_Loan_Default_data deve ser colocado junto na pasta com o código baixado do GitHub.
+
+## Passo 3 - Iniciar o MLFlow:
 (precisa ser iniciado na mesma pasta onde está o código)
 ```
 mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
 
-## Passo 3 - Executar main_workflow.py
+## Passo 4 - Executar main_workflow.py
 (deve ser executado na pasta em que o arquivo está)
 ```
 python main_workflow.py
@@ -42,17 +48,17 @@ python main_workflow.py
 - Rastreamento e registro no MLflow
 - Promoção de modelos para Staging e Production no MLflow
 
-## Passo 4 - Executar flask_api.py para servir o modelo de "produção" numa API (porta 8000)
+## Passo 5 - Executar flask_api.py para servir o modelo de "produção" numa API (porta 8000)
 ```
 python flask_api.py
 ```
 
-## Passo 5 - Executar predict.py para chamar API com um payload de exemplo para fazer a predição
+## Passo 6 - Executar predict.py para chamar API com um payload de exemplo para fazer a predição
 ```
 python predict.py
 ```
 
-## Passo 6 - Executar monitor_drift.py para avaliar drift do modelo e simular retreinamento
+## Passo 7 - Executar monitor_drift.py para avaliar drift do modelo e simular retreinamento
 ```
 python monitor_drift.py
 ```
